@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><beans xmlns="http://www.springframework.org/schema/beans" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+    <jaxws:server id="reporting" address="/reporting">
+        <jaxws:serviceBean>
+            <bean  class="com.swifta.subsidiary.mats.operations.Reporting"/>
+        </jaxws:serviceBean>
+    </jaxws:server>
+    <jaxws:server id="ProvisioningV1_0" address="/ProvisioningV1_0">
+        <jaxws:serviceBean>
+            <bean class="com.swifta.subsidiary.mats.services.ProvisioningImpl"/>
+        </jaxws:serviceBean>
+    </jaxws:server>
+    <jaxws:server id="FinancialV1_0" address="/FinancialV1_0">
+        <jaxws:serviceBean>
+            <bean class="com.swifta.subsidiary.mats.services.FinancialImpl"/>
+        </jaxws:serviceBean>
+    </jaxws:server>
+</beans>
